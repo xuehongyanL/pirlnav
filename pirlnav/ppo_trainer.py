@@ -728,7 +728,7 @@ class PIRLNavPPOTrainer(PPOTrainer):
                             video_option=self.config.VIDEO_OPTION,
                             video_dir=self.config.VIDEO_DIR,
                             images=rgb_frames[i],
-                            episode_id=current_episodes[i].episode_id,
+                            episode_id=f'{current_episodes[i].episode_id}-{current_episodes[i].object_category}',
                             checkpoint_idx=checkpoint_index,
                             metrics=self._extract_scalars_from_info(infos[i]),
                             fps=self.config.VIDEO_FPS,
